@@ -1,5 +1,7 @@
 package basic.loop;
 
+import java.util.Scanner;
+
 public class ForExample {
 
     public static void main(String[] args) {
@@ -30,6 +32,19 @@ public class ForExample {
         // 입력받은 정수까지의 팩토리얼 값을 구하세요.
         // 팩토리얼) 5! -> 5 x 4 x 3 x 2 x 1
 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("정수 입력: ");
+        int num = sc.nextInt();
+
+        int fac = 1; // 팩토리얼 최종 값을 담을 변수
+        for (int i=num; i >= 1; i--) {
+            fac *= i;
+        }
+
+        System.out.printf("%d! = %d\n", num, fac);
+
+
+        sc.close();
     }
 
 }
