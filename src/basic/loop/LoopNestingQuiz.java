@@ -1,5 +1,7 @@
 package basic.loop;
 
+import java.util.Scanner;
+
 public class LoopNestingQuiz {
 
     public static void main(String[] args) {
@@ -13,7 +15,28 @@ public class LoopNestingQuiz {
 		 소수의 개수: 10개
 		*/
 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("정수: ");
+        int num = sc.nextInt();
+
+        int count = 0; // 소수의 개수가 몇 개인지를 기억할 변수.
+
+        for (int i=2; i <= num; i++) {
+            int cnt = 0; // 소수 판별을 위해 나누어 떨어진 횟수를 세 줄 변수.
+            for (int j=1; j<=i; j++) {
+                if (i % j == 0) cnt++;
+            }
+            if (cnt == 2) {
+                System.out.print(i + " ");
+                count++;
+            }
+        }
+
+        System.out.println("\n소수의 개수: " + count + "개");
+
+
+
+        sc.close();
 
     }
-
 }
